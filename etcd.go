@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	log "github.com/sirupsen/logrus"
 	etcd "github.com/coreos/etcd/client"
+	log "github.com/sirupsen/logrus"
 	"golang.org/x/net/context"
 )
 

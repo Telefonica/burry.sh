@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
-	log "github.com/sirupsen/logrus"
-	azip "github.com/pierrre/archivefile/zip"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strings"
+
+	azip "github.com/pierrre/archivefile/zip"
+	log "github.com/sirupsen/logrus"
 )
 
 func about() {
