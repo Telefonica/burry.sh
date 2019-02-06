@@ -7,11 +7,11 @@ import (
 	"strings"
 	"time"
 
-	log "github.com/sirupsen/logrus"
 	etcd "github.com/coreos/etcd/client"
 	consul "github.com/hashicorp/consul/api"
 	flag "github.com/ogier/pflag"
 	"github.com/samuel/go-zookeeper/zk"
+	log "github.com/sirupsen/logrus"
 )
 
 const (
@@ -43,7 +43,7 @@ var (
 	isvcs = [...]string{INFRA_SERVICE_ZK, INFRA_SERVICE_ETCD, INFRA_SERVICE_CONSUL}
 	// the infra service endpoint to use:
 	endpoint string
-  timeout  int
+	timeout  int
 	zkconn   *zk.Conn
 	kapi     etcd.KeysAPI
 	ckv      *consul.KV
@@ -91,17 +91,17 @@ func init() {
 	flag.Parse()
 
 	switch log_level := os.Getenv("LOG_LEVEL"); log_level {
-  case "DEBUG":
+	case "DEBUG":
 		log.SetLevel(log.DebugLevel)
-  case "WARN":
+	case "WARN":
 		log.SetLevel(log.WarnLevel)
-  case "ERROR":
+	case "ERROR":
 		log.SetLevel(log.ErrorLevel)
-  case "FATAL":
+	case "FATAL":
 		log.SetLevel(log.FatalLevel)
-  case "PANIC":
+	case "PANIC":
 		log.SetLevel(log.PanicLevel)
-  default:
+	default:
 		log.SetLevel(log.InfoLevel)
 	}
 
